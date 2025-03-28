@@ -43,8 +43,20 @@ class CountViewModelTestMock {
     @Test
     fun get_state() = runTest {
         assert(viewModel.state.value.page==fakePage)
-        assert(viewModel.state.value.webPageLivaDataWords==fakePage.split("\\s".toRegex()))
+        assert(viewModel.state.value.webPageLivaDataWords.size==2)
         assert(viewModel.state.value.webPageLiveDataCharacters[0]=='5')
-        assert(viewModel.state.value.webPageLiveDataCharacters== listOf('5', '\n'))
+        assert(viewModel.state.value.webPageLiveDataCharacters==listOf('5', '\n'))
     }
+
+    /**
+     * While we keep the @deprecated function, we should still test to ensure
+     * that the new version of it works as expected in case someone uses the old function
+     * (Important practice for legacy code bases (Apps or libs, specially libs) compatibility reasons!)
+     * */
+    @Test
+    fun word_count_parity(){
+        assert(viewModel.performantSplitWords(fakePage)==viewModel.simpleCountWords(fakePage))
+    }
+
+
 }

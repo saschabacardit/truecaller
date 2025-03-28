@@ -67,7 +67,8 @@ fun WebViewScreenContent(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 if (itemState.webPageLivaDataWords.isNotEmpty()){
-                    Text(text = "In the webpage we have all these words ${itemState.webPageLivaDataWords}")                }
+                    Text(text = "In the webpage we have all these unique (case insensitive) words ${itemState.webPageLivaDataWords}")
+                }
             }
         }
         item {

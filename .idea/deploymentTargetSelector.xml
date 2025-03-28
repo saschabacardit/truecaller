@@ -13,9 +13,6 @@
         </DropdownSelection>
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ModelUnitTest">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="CountViewModelTestInjection">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>

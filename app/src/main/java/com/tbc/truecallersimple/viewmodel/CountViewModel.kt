@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Thread.sleep
 import javax.inject.Inject
 
 
@@ -25,7 +26,10 @@ class CountViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             withContext(Dispatchers.IO){
-                updateData()
+                while(_state.value.page.isEmpty()){
+                    updateData()
+                    sleep(200)
+                }
             }
         }
     }

@@ -18,3 +18,5 @@ they're marked as @deprecated.
 Note that this isn't a "performant code is bad", but rather that because the required operation isn't that complex,
 along with using a frankly slow language (Kotlin, Java), using code that will be harder to understand isn't 
 likely a good option as clearly full performance isn't the aim.
+
+Note that methods also have comments & thought explanations.

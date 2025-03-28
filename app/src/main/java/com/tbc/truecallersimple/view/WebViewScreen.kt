@@ -40,6 +40,20 @@ fun WebViewScreenContent(
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically
             ) {
+                if (itemState.page.isEmpty()){
+                    Text(text = "Loading the page!")
+                }
+            }
+        }
+
+        item {
+            Row(
+                modifier = Modifier.fillMaxWidth()
+                    .wrapContentHeight()
+                    .padding(vertical = 25.dp),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
                 if (itemState.webPageLiveDataCharacters.isNotEmpty()){
                     Text(text = "The very 15th character is ${itemState.webPageLiveDataCharacters[0]}")
                 }
